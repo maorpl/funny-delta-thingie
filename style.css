@@ -1,0 +1,89 @@
+body
+{
+    background-color: rgb(34, 34, 34);
+    color: rgb(210, 210, 210);
+    text-shadow: 5px 5px 5px black;
+}
+
+h2
+{
+    transform: translate(0%,-90%);
+}
+
+#pageName
+{
+    text-align: center;
+    font-size: 7em;
+}
+
+.mainAction
+{
+    text-align: center;
+}
+
+#mainButton1, #mainButton2
+{
+    width: fit-content;
+    padding: 10px;
+    font-size: 35px;
+    border-radius: 25px;
+    border-width: 0px;
+    border-color: black;
+    border-style: solid;
+    background-color: antiquewhite;
+    transition: .35s ease-in-out;
+}
+
+#mainButton1:hover, #mainButton2:hover
+{
+    background-color: rgb(255, 215, 155);
+    font-size: 40px;
+    transition: .2s ease-in-out;
+    box-shadow: 0px 0px 10px rgb(255, 215, 155);
+}
+
+#a, #b, #c
+{
+    text-align: center;
+    font-size: 35px;
+    width: 40px;
+    border-radius: 15px;
+    padding: 3px;
+    transition: .35s ease-in-out;
+}
+
+.ABCinput
+{
+    font-size: 50px;
+    transform: translate(0%, 50%);
+    position: absolute;
+}
+
+#titleAndInputs
+{
+    font-size: 25px;
+    display: grid;
+    border: 5px solid;
+    border-radius: 25px;
+    background-color: rgb(77, 77, 77);
+    padding: 5px;
+    width: 30%;
+    margin: auto;
+    box-shadow: 0px 0px 20px  rgb(102, 102, 102);
+    place-items: center;
+    height: 200px;
+    transition: .35s ease-in-out;
+}
+
+#titleAndInputs:hover
+{
+    box-shadow: 0px 0px 40px  rgb(171, 171, 171);
+    transition: .15s ease-in-out;
+}
+
+#a:hover, #b:hover, #c:hover
+{
+    font-size: 45px;
+    width: 50px;
+    transition: .2s ease-in-out;
+}
