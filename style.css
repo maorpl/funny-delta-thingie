@@ -5,7 +5,7 @@ body
     text-shadow: 5px 5px 5px black;
 }
 
-h2
+#titleInputs
 {
     transform: translate(0%,-90%);
 }
@@ -50,6 +50,8 @@ h2
     border-radius: 15px;
     padding: 3px;
     transition: .35s ease-in-out;
+    background-color: rgb(215, 215, 215);
+    box-shadow: 0px 0px 12px;
 }
 
 .ABCinput
@@ -75,7 +77,7 @@ h2
     transition: .35s ease-in-out;
 }
 
-#titleAndInputs:hover
+#titleAndInputs:hover, .result:hover
 {
     box-shadow: 0px 0px 40px  rgb(171, 171, 171);
     transition: .15s ease-in-out;
@@ -87,3 +89,52 @@ h2
     width: 50px;
     transition: .2s ease-in-out;
 }
+
+.theme
+{
+    font-size: auto; /*żeby nie krzyczał*/
+}
+
+/* #night, #day
+{
+    font-size: 25px;
+    padding: 5px;
+} */
+
+#titleResult
+{
+    text-align: center;
+    transform: translate(0%,-35%);
+    font-size: 50px;
+}
+
+.result
+{
+    font-size: 25px;
+    border: 5px solid;
+    border-radius: 25px;
+    background-color: rgb(77, 77, 77);
+    padding: 50px;
+    width: 30%;
+    margin: auto;
+    box-shadow: 0px 0px 20px  rgb(102, 102, 102);
+    place-items: center;
+    height: 250px;
+    transition: .35s ease-in-out;
+    display: none;
+}
+
+#x-result
+{
+    font-size: 50px;
+    transform: translate(0%, -50%);
+    
+}
+
+.show
+{
+    display: grid;
+    text-align: center;
+}
+
+/*das*/

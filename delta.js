@@ -3,6 +3,8 @@
 
 let calcButton = document.querySelector("#mainButton1");
 let resetButton = document.querySelector("#mainButton2");
+let resultBox = document.querySelector(".result");
+let resultOfX = document.querySelector("#x-result");
 
 function delta(x,y,z)
 {
@@ -11,7 +13,7 @@ function delta(x,y,z)
     {
         let oneZero = -y/2*x;
         console.log(`Funkcja ma miejsce zerowe w x = ${oneZero}`)
-        return Number(oneZero);
+        return [1,oneZero];
     }
 
     if (calcDelta>0)
@@ -20,13 +22,13 @@ function delta(x,y,z)
         let firstZero = (-y+calcDelta)/2*x;
         let secondZero = (-y-calcDelta)/2*x;
         console.log(`Funkcja ma miejsca zerowe w x = ${firstZero} i x = ${secondZero}`);
-        return [firstZero,secondZero];
+        return [2,firstZero,secondZero];
     }
 
     if (calcDelta<0) //brakuje implementacji liczb zespolonych
     {
         console.log("później zaimplementuje liczby zespolone");
-        return 0;
+        return [-1];
     }
 }
 
@@ -38,8 +40,32 @@ function deltaOnClick()
     let eqVar1 = Number(a1.value);
     let eqVar2 = Number(b1.value);
     let eqVar3 = Number(c1.value);
-    delta(eqVar1,eqVar2,eqVar3);
+    let result = delta(eqVar1,eqVar2,eqVar3);
     console.log(`${eqVar1}, ${eqVar2}, ${eqVar3}`);
+    if ((delta(eqVar1,eqVar2,eqVar3))[0] == 1 || -1 || 2)
+    {
+        resultBox.className = "result show";
+    }
+
+    switch(result[0])
+    {
+        case -1:
+            {
+                resultOfX.style.fontSize = "40px";
+                resultOfX.textContent = "Liczby zespolone nie zostały jeszcze zaimplementowane...";
+                break;
+            }
+        case 1:
+            {
+                resultOfX.textContent = `x = ${result[1]}`;
+                break;
+            }
+        case 2:
+            {
+                resultOfX.textContent = `x = ${result[1]} oraz x = ${result[2]}`;
+                break;
+            }
+    }
 }
 
 function resetOnClick()
@@ -50,7 +76,10 @@ function resetOnClick()
     a2.value = "";
     b2.value = "";
     c2.value = "";
+    resultBox.className = "result"
 }
 
 calcButton.onclick = deltaOnClick;
 resetButton.onclick = resetOnClick;
+
+//das
